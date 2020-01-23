@@ -3,17 +3,18 @@ from tkinter import messagebox
 import os
 import sys
 
-root = Tk()
+
+root1 = Tk()
 
 
-class HomeP:
+class ShopP:
     def __init__(self, master):
         master.geometry("1920x1080")
-        # master.resizable(False, False)
         self.frame = Frame(master, width=1920, height=1080)
+
         self.canvas = Canvas(self.frame, width=200, height=159)
         self.canvas.place(x=0, y=0)
-        self.photo1 = PhotoImage(file="home2.png")
+        self.photo1 = PhotoImage(file="buy.png")
         self.canvas.create_image(0, 0, image=self.photo1, anchor=NW)
 
         self.label1 = Label(self.frame, text="A's Supermarket", font="0 40 bold")
@@ -21,38 +22,34 @@ class HomeP:
 
         self.frame2 = Frame(self.frame)
         self.frame2.place(x=0, y=190)
-        self.button1 = Button(self.frame2, font="30", text="Home")
-        self.button2 = Button(self.frame2, font="30", text="Shop", command=ref)
+        self.button1 = Button(self.frame2, font="30", text="Home", command=ref)
+        self.button2 = Button(self.frame2, font="30", text="Shop")
         self.button3 = Button(self.frame2, font="30", text="bill")
-        self.button4 = Button(self.frame2, text="Quit", font="30", command=q)
+        self.button4 = Button(self.frame2, text="Quit", font="30", command=qu)
         self.button1.pack(side=LEFT, padx=150)
         self.button2.pack(side=LEFT, padx=150)
         self.button3.pack(side=LEFT, padx=150)
         self.button4.pack(side=RIGHT, padx=150)
-        self.frame3 = Frame(master, bg="red", width=700, height=400)
-        self.frame3.place(x=400, y=300)
-        # self.canvas1 = Canvas(self.frame3)
-        # self.canvas1.pack()
-        # self.photo2 = PhotoImage(file="home1.png")
-        # self.canvas1.create_image(0, 0, image=self.photo2, anchor=NW)
+        # self.frame3 = Frame(master, bg="red", width=700, height=400)
+        # self.frame3.place(x=400, y=300)
         self.frame.pack()
 
 
-def q():
+def qu():
     answer = messagebox.askquestion("Exit", "Do you really want to exit?")
     if answer == "yes":
-        root.quit()
-
-
-def ref():
-    os.system('shopPage.py')
-    root.destroy()
+        root1.quit()
 
 
 def donothing():
     pass
 
 
-root.protocol('WM_DELETE_WINDOW', donothing)
-b = HomeP(root)
-root.mainloop()
+def ref():
+    os.system('HomePage.py')
+    root1.destroy()
+
+
+root1.protocol('WM_DELETE_WINDOW', donothing)
+f = ShopP(root1)
+root1.mainloop()
