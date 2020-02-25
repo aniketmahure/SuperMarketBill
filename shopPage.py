@@ -10,7 +10,7 @@ root1 = Tk()
 class ShopP:
     def __init__(self, master):
         master.geometry("1920x1080")
-        self.frame = Frame(master, width=1920, height=1080)
+        self.frame = Frame(master, width=1920, height=1080, bg="#a64dff")
 
         self.canvas = Canvas(self.frame, width=200, height=159)
         self.canvas.place(x=0, y=0)

@@ -2,6 +2,7 @@ import os
 from tkinter import *
 from tkinter import messagebox
 
+
 root = Tk()
 
 
@@ -22,7 +23,7 @@ class HomeP:
         self.frame2.place(x=0, y=190)
         self.button1 = Button(self.frame2, font="30", text="Home", bg="#a64dff")
         self.button2 = Button(self.frame2, font="30", text="Shop", bg="#a64dff", command=ref)
-        self.button3 = Button(self.frame2, font="30", text="bill", bg="#a64dff")
+        self.button3 = Button(self.frame2, font="30", text="bill", bg="#a64dff", command=ref1)
         self.photo2 = PhotoImage(file="exit.png")
         self.button4 = Button(self.frame2, text="Quit", image=self.photo2, font="30", command=q, bg="#a64dff")
         self.button1.pack(side=LEFT, padx=160)
@@ -44,6 +45,11 @@ def q():
 
 def ref():
     os.system('shopPage.py')
+    root.destroy()
+
+
+def ref1():
+    os.system('BillPage.py')
     root.destroy()
 
 
