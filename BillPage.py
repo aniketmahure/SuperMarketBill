@@ -5,6 +5,10 @@ import sys
 
 
 root2 = Tk()
+root2.overrideredirect(True)
+root2.geometry("{0}x{0}+0+0".format(root2.winfo_screenwidth(), root2.winfo_screenheight()))
+root2.resizable(False, False)
+root2.configure(background="black")
 
 qnt = IntVar()
 s = StringVar()
