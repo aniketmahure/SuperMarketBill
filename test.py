@@ -1,7 +1,7 @@
 from tkinter import *
 
 root = Tk()
-
+root.tile("mini")
 data = StringVar()
 qnt = IntVar()
 
