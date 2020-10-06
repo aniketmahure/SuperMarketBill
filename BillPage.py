@@ -135,7 +135,8 @@ def ref1():
     root2.destroy()
 
 
-# root2.protocol('WM_DELETE_WINDOW', donothing)
+root2.protocol('WM_DELETE_WINDOW', donothing)
 f = ShopP(root2)
+root2.wm_iconbitmap("Shop.ico")
+root2.title("Supermarket System : BillPage")
 root2.mainloop()
-# root2.title("Supermarket System")
