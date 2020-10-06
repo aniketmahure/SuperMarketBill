@@ -4,6 +4,12 @@ import os
 # import sys
 
 root3 = Tk()
+root3.attributes('-fullscreen', True)
+root3.title("Supermarket System: Login")
+root3.overrideredirect(True)
+root3.geometry("{0}x{0}+0+0".format(root3.winfo_screenwidth(), root3.winfo_screenheight()))
+root3.configure(background="black")
+root3.resizable(False, False)
 
 username = StringVar()
 password = StringVar()
@@ -55,7 +61,11 @@ def q():
     if answer == "yes":
         root3.quit()
 
+def DNothing():
+    pass
 
 root3.title("Supermarket System")
+root3.wm_iconbitmap("Administrator.ico")
+root3.protocol('WM_DELETE_WINDOW', DNothing)
 a = LoginP(root3)
 root3.mainloop()
