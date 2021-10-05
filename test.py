@@ -32,8 +32,8 @@ class ShopP:
         self.qnt.get = self.qnt.get - 1
 
     def add(self):
-        data = self.Lb.get(ACTIVE)
-
+     #   data = self.Lb.get(ACTIVE)
+          data = self.Lb.get(ACTIVE)
     def show(self):
         items = self.Lb.curselection()
         self.tx.insert(INSERT, qnt.get())
